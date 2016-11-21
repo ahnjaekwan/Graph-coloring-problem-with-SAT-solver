@@ -2,6 +2,7 @@
 Solve graph coloring problem with SAT solver that I created.
 
 I separated this into two sub parts:
+
 1. Convert graph coloring problem into CNF.
 2. Implement SAT solver to solve satifiability of CNF.
 
