@@ -1,17 +1,10 @@
-;
-; All functions you need to write are marked with 'EXERCISE' in their header comments.
-; Same rules apply regarding Lisp functions you are allowed to use.
-; In fact, you do not need a lot of Lisp functions to finish this assignment.
-;
-
 ;;;;;;;;;;;;;;;;;;;;;;
 ; General util.
 ;
 (defun reload()
-  (load "hw6.lsp")
+  (load "graph_coloring_to_CNF.lsp")
   );end defun
 
-; EXERCISE: Fill this function.
 ; returns the index of the variable
 ; that corresponds to the fact that 
 ; "node n gets color c" (when there are k possible colors).
@@ -21,7 +14,6 @@
 	(+ c (* k (- n 1)))
   )
 
-; EXERCISE: Fill this function
 ; returns *a clause* for the constraint:
 ; "node n gets at least one color from the set {c,c+1,...,k}."
 
@@ -43,7 +35,6 @@
 	)
 )
 
-; EXERCISE: Fill this function
 ; returns *a list of clauses* for the constraint:
 ; "node n gets at most one color from the set {c,c+1,...,k}."
 
@@ -57,7 +48,6 @@
 	)
   )
 
-; EXERCISE: Fill this function
 ; returns *a list of clauses* to ensure that
 ; "node n gets exactly one color from the set {1,2,...,k}."
 
@@ -77,7 +67,7 @@
 			(t 		(cons (cons (* -1 (first (at-least-one-color n1 c k))) (list (* -1 (first (at-least-one-color n2 c k))))) (help2 n1 n2 (+ c 1) k)))
 	)
 )
-; EXERCISE: Fill this function
+
 ; returns *a list of clauses* to ensure that
 ; "the nodes at both ends of edge e cannot have the same color from the set {1,2,...,k}."
 
@@ -88,10 +78,6 @@
 	(append (generate-node-clauses (first e) k) (generate-node-clauses (second e) k) (help2 (first e) (second e) 1 k))
  )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Your exercises end here. Below are top-level
-; and utility functions that you do not need to understand.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; 
 ; Top-level function for converting the graph coloring problem
