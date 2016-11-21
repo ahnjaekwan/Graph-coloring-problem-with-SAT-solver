@@ -1,7 +1,3 @@
-;;	Jaekwan Ahn
-;;	UID: 604057669
-;;	HW4
-
 (defun num-member (li)	;RETURNS NUMBER OF MEMBERS IN LIST
 	(cond	((null li)	0)
 			(t	(+ 1 (num-member (cdr li))))
