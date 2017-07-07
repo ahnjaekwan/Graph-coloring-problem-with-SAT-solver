@@ -15,3 +15,5 @@ Notes:
 2. Graph coloring problem is disassembled into a number of constraints caused by any two adjacent nodes. These constraints are appropriately converted into conjunctive normal forms(CNF).
 3. I applied the DPLL algorithm, an evolved form of backtracking algorithm, to SAT solvers by eagerly using unit propagation and pure literal elimination.
 4. I improved the DPLL algorithm by giving the utmost priority to the most constrained and also high priority to the most constraining variable.
+
+Coursework from UCLA CS161
